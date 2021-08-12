@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
 
-$('#enterUsCurrency').click(function() {
-  let conversion = $('#convert').val();
+$('#convert').click(function() {
+  let conversion = $('#currencyToConvert').val();
+  console.log(conversion);
   // clearFields()
 });
