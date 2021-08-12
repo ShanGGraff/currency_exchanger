@@ -1,0 +1,13 @@
+.cssTemplate {
+  width: 95%;
+  height: 90%;
+  background-color: rgb(226, 226, 220);
+  border: 1px solid rgb(19, 18, 18);
+  margin: 10px;
+  padding: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(12, 11, 11);
+  border-radius: 10px;
+  text-align: center;
+}
+
