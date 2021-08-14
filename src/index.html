@@ -7,10 +7,20 @@
   <div class="container">
     <div class="cssTemplate">
       <h1>Convert US Currency to Other Foreign Currencies</h1>
-      <label for="enterUsCurrency">Enter amount of US dollars to convert to another currency</label>
+      <label for="amountUS">Enter amount of US dollars to convert to another currency</label>
       <br>
-      <input id="currencyToConvert" type="number">
+      <input id="amountUS" type="number">
+      <form id="foreignCurrency">
+        <label for="currencyChange" class="control-label">Which foreign currency would you like to get the conversion rate for?</label>
+          <select class="form-control" id="chooseCurrency">
+            <option>Chinese yuan renminbi</option>
+            <option>Croatian kuna</option>
+            <option>Fiji dollar</option>
+            <option>Hungarian forint</option>
+            <option>Namibian dollar</option>
+          </select>
       <button class="btn-success" id="convert">Click here to get conversion</button>
+      </form>
     </div>
     </div>
 </body>
