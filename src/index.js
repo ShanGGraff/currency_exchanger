@@ -5,9 +5,8 @@ import './css/styles.css';
 import CurrencyRates from './currencyRates.js';
 
 function getElements(response) {
-  console.log(response);
-  if (response.success) {
-    // let currencyList = response;
+  if (response.response === "success") {
+    console.log(response);
     $('.showRateExchange').text(`${response.conversion_rates.AUD}`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
