@@ -35,9 +35,5 @@ function convertCurrency(currency) {
 $('#convert').click(function() {
   let amountUS = parseInt($('#amountUS').val());
   let country = convertCurrency($('#chooseCurrency').val());
-  // let currencyConverted = new CurrencyRates(conversion, currency);
-  console.log(amountUS);
-  console.log(country);
-  // console.log(currencyConverted);
   makeApiCall(country, amountUS);
 });
