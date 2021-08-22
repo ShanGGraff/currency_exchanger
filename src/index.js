@@ -5,7 +5,6 @@ import './css/styles.css';
 import CurrencyRates from './currencyRates.js';
 
 function getElements(response) {
-  console.log(response);
   if (response.result === "success") {
 
     $('.showRateExchange').text(`The conversion rate from USD to ${response.target_code} is: ${response.conversion_result} at a rate of: ${response.conversion_rate}`);
