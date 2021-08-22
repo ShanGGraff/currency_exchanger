@@ -6,7 +6,7 @@ import CurrencyRates from './currencyRates.js';
 
 function getElements(response) {
   console.log(response);
-  if (response) {
+  if (response.result === "success") {
     $('.showRateExchange').text(`${response.conversion_rates.AUD}`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
