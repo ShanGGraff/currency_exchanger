@@ -62,7 +62,8 @@ See below for setting up the build environment.
 
 | Behavior | Input | Output |
 |:---:|:---:|:---:|
-| The program should handle... | When it receives... | It should return... |
+| Currency Exchanger receives: | _12_ in Number field and _Chinese yuan renminbi_ is selected | It should return something close to this: _The conversion rate from USD to CNY is: 77.9856 at a rate of: 6.4988_ 
+| Currency Exchanger receives: | An incorrect API_KEY, or a currency not supported | It should return: _There was an error: Please check your API Key if you received a 403 Forbidden error. If you received a 404 not found, please make sure the entered currency type is supported_
 
 ## Known Bugs <a id="bugs"></a>
 * The error objects returned from the API use hyphens as object keys, so can't specify exactly what the error is. For example and invalid key error returns the following:
