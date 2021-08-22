@@ -56,7 +56,7 @@ See below for setting up the build environment.
 9. If you'd like to run project in a development server run the following: _`npm run start`_
 10. To run Lint, use the following command: `npm run lint`
 11. To run tests with Jest, use the following: `npm test`
-12. User will also need to sign up for an API key from www.exchangerate-api.com. Once user has an API key, they will need to add an .env file in the root directory of the project. The .env file should contain the following: API_KEY=__your-api-key-here__. **Important:** Make sure to add your .env file to .gitignore before pushing any changes to github so your API key isn't publicly viewable. 
+12. User will also need to sign up for an API key from www.exchangerate-api.com. Once user has an API key, they will need to add an .env file in the root directory of the project. The .env file should contain the following: API_KEY=_your-api-key-here_.  **Important:** Make sure to add your .env file to .gitignore before pushing any changes to github so your API key isn't publicly viewable. 
 
 ## Specifications <a id="specs"></a>
 
@@ -65,7 +65,14 @@ See below for setting up the build environment.
 | The program should handle... | When it receives... | It should return... |
 
 ## Known Bugs <a id="bugs"></a>
-* The error messages returned from the API use hyphens
+* The error objects returned from the API use hyphens as object keys, so can't specify exactly what the error is. For example and invalid key error returns the following:
+{
+    "result": "error",
+    "documentation": "https://www.exchangerate-api.com/docs",
+    "terms-of-use": "https://www.exchangerate-api.com/terms",
+    "error-type": "invalid-key"
+}
+But since the error-type key uses a hyphen it can't be called from the returned error object. The same is true for the error returned when you enter a currency not supported by the API.
 
 ## License
 * [MIT](https://choosealicense.com/licenses/mit/)

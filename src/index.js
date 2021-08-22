@@ -6,10 +6,10 @@ import CurrencyRates from './currencyRates.js';
 
 function getElements(response) {
   if (response.result === "success") {
-
+    $('.showErrors').hide();
     $('.showRateExchange').text(`The conversion rate from USD to ${response.target_code} is: ${response.conversion_result} at a rate of: ${response.conversion_rate}`);
   } else {
-    $('.showErrors').text(`There was an error: ${response.result}`);
+    $('.showErrors').text(`There was an error: Please check your API Key if you received a 403 Forbidden error. If you received a 404 not found, please make sure the entered currency type is supported`);
   }
 }
 
