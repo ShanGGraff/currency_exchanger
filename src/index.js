@@ -7,14 +7,15 @@ import CurrencyRates from './currencyRates.js';
 function getElements(response) {
   console.log(response);
   if (response.result === "success") {
-    $('.showRateExchange').text(`${response.conversion_rates.AUD}`);
+
+    $('.showRateExchange').text(`${response.conversion_result}`);
   } else {
-    $('.showErrors').text(`There was an error: ${response}`);
+    $('.showErrors').text(`There was an error: ${response.result}`);
   }
 }
 
-async function makeApiCall() {
-  const response = await CurrencyRates.getRates();
+async function makeApiCall(country, amountUS) {
+  const response = await CurrencyRates.getRates(country, amountUS);
   getElements(response);
 }
 
@@ -32,11 +33,11 @@ function convertCurrency(currency) {
 }
 
 $('#convert').click(function() {
-  let conversion = $('#amountUS').val();
-  const currency = convertCurrency($('#chooseCurrency').val());
+  let amountUS = parseInt($('#amountUS').val());
+  let country = convertCurrency($('#chooseCurrency').val());
   // let currencyConverted = new CurrencyRates(conversion, currency);
-  console.log(conversion);
-  console.log(currency);
+  console.log(amountUS);
+  console.log(country);
   // console.log(currencyConverted);
-  makeApiCall();
+  makeApiCall(country, amountUS);
 });
