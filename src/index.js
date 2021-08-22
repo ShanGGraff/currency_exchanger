@@ -8,7 +8,7 @@ function getElements(response) {
   console.log(response);
   if (response.result === "success") {
 
-    $('.showRateExchange').text(`${response.conversion_result}`);
+    $('.showRateExchange').text(`The conversion rate from USD to ${response.target_code} is: ${response.conversion_result} at a rate of: ${response.conversion_rate}`);
   } else {
     $('.showErrors').text(`There was an error: ${response.result}`);
   }
